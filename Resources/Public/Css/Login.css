@@ -1,0 +1,18 @@
+body#typo3-index-php {
+	background: #FFFFFF;
+}
+
+#typo3-index-php #t3-login-form-logo {
+	background: #000000;
+	padding: 20px 20px 0 20px;
+}
+
+#typo3-index-php .shadow {
+	box-shadow: none !important;
+}
+
+#typo3-index-php .t3-login-field input.t3-login-submit {
+	border-color: #000000;
+	background: #000000;
+	padding: 5px 50px 5px 50px;
+}
