@@ -1,0 +1,5 @@
+# cat=basic; type=user[EXT:custom_login_skin/Classes/Extensionmanager/Configuration/Textarea.php:CPSIT\CustomLoginSkin\Extensionmanager\Configuration\Textarea->render]; label=HTML Template(s): Set path to HTML template file. See documentation for examples.
+templates = EXT:custom_login_skin/Resources/Private/Templates/Login.html
+
+# cat=basic; type=user[EXT:custom_login_skin/Classes/Extensionmanager/Configuration/Textarea.php:CPSIT\CustomLoginSkin\Extensionmanager\Configuration\Textarea->render]; label=Stylesheet(s): Set path to stylesheet file. See documentation for examples.
+stylesheets = EXT:custom_login_skin/Resources/Public/Css/Login.css
