@@ -23,4 +23,4 @@ Screenshots
 	:width: 580px
 	:alt: Customized backend login form
 
-		Backend login form after extension installation
+	Backend login form after extension installation
