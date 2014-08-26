@@ -105,20 +105,22 @@ class LoginFormHook {
 	 * @return void
 	 */
 	protected function addCssFile($cssFile) {
-		$cssFile = $this->getRelativeFilePath($cssFile, FALSE, TRUE);
-		$this->getDocumentTemplate()->getPageRenderer()->addCssFile($cssFile);
+		$filePath = $this->getRelativeFilePath($cssFile, FALSE, TRUE);
+		$this->getDocumentTemplate()->getPageRenderer()->addCssFile($filePath);
 
-		$directoryName = dirname($cssFile);
-		if (!isset($GLOBALS['TBE_STYLES']['skins']['custom_login_skin'])) {
-			$GLOBALS['TBE_STYLES']['skins']['custom_login_skin'] = array(
-				'name' => 'custom_login_skin',
-				'stylesheetDirectories' => array(
-					$directoryName => $directoryName,
-				)
-			);
-		} else {
-			if (!in_array($directoryName, $GLOBALS['TBE_STYLES']['skins']['custom_login_skin']['stylesheetDirectories'])) {
-				$GLOBALS['TBE_STYLES']['skins']['custom_login_skin']['stylesheetDirectories'][$directoryName] = $directoryName;
+		if (substr($cssFile, 0, 4) === 'EXT:') {
+			list($extensionKey, $path) = explode('/', substr($cssFile, 4), 2);
+			if (!isset($GLOBALS['TBE_STYLES']['skins'][$extensionKey])) {
+				$GLOBALS['TBE_STYLES']['skins'][$extensionKey] = array(
+					'name' => $extensionKey,
+					'stylesheetDirectories' => array(
+						$path => $path,
+					)
+				);
+			} else {
+				if (!in_array($path, $GLOBALS['TBE_STYLES']['skins'][$extensionKey]['stylesheetDirectories'])) {
+					$GLOBALS['TBE_STYLES']['skins']['custom_login_skin']['stylesheetDirectories'][$path] = $path;
+				}
 			}
 		}
 	}
